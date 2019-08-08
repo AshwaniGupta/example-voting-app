@@ -1,10 +1,11 @@
+#test
 pipeline {
 agent any
 tools{
 maven 'maven 3.6.1'
 }
 stages{
-stage("build){
+stage("build"){
 steps{
 echo 'Compiling worker app'
 dir('worker'){
@@ -12,12 +13,12 @@ sh 'mvn compile'
 }
 }
 }
-stage(two){
+stage("two"){
 steps{
 echo 'Running Unit Tets on worker app'
 }
 }
-stage(three){
+stage("three"){
 steps{
 echo 'Packaging worker app'
 }
